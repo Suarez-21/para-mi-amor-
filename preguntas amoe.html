@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti, con todo mi corazón 💖</title>
+
+<style>
+body {
+    background-color: #ff00aa;
+    color: white;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.question {
+    display: none;
+    font-size: 1.8em;
+    margin-top: 50px;
+}
+
+button {
+    background-color: white;
+    color: #ff00aa;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ffe6f2;
+}
+
+#final {
+    display: none;
+    font-size: 1.4em;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: auto;
+}
+
+#answers {
+    margin-top: 40px;
+    background-color: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+    font-size: 1.1em;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Respóndeme con el corazón 💌</h1>
+
+<div class="question" id="q1">
+¿Me amas? ❤️<br>
+<button onclick="answer(1,'Sí')">Sí</button>
+<button onclick="answer(1,'No')">No</button>
+<button onclick="answer(1,'Con el alma')">Con el alma</button>
+</div>
+
+<div class="question" id="q2">
+¿Eres feliz a mi lado? 😊<br>
+<button onclick="answer(2,'Sí')">Sí</button>
+<button onclick="answer(2,'No')">No</button>
+<button onclick="answer(2,'Más de lo que imaginé')">Más de lo que imaginé</button>
+</div>
+
+<div class="question" id="q3">
+¿Te sientes segura a mi lado? 🤍<br>
+<button onclick="answer(3,'Sí')">Sí</button>
+<button onclick="answer(3,'No')">No</button>
+<button onclick="answer(3,'Como en casa')">Como en casa</button>
+</div>
+
+<div class="question" id="q4">
+¿Soy el hombre que siempre has querido? 🌹<br>
+<button onclick="answer(4,'Sí')">Sí</button>
+<button onclick="answer(4,'No')">No</button>
+<button onclick="answer(4,'El que Dios puso para mí')">El que Dios puso para mí</button>
+</div>
+
+<div class="question" id="q5">
+¿Serías capaz de hacerme daño? 💔<br>
+<button onclick="answer(5,'Sí')">Sí</button>
+<button onclick="answer(5,'No')">No</button>
+<button onclick="answer(5,'Jamás podría')">Jamás podría</button>
+</div>
+
+<div class="question" id="q6">
+¿Tendrías el valor para engañarme? 😔<br>
+<button onclick="answer(6,'Sí')">Sí</button>
+<button onclick="answer(6,'No')">No</button>
+<button onclick="answer(6,'Nunca, ni pensarlo')">Nunca, ni pensarlo</button>
+</div>
+
+<div class="question" id="q7">
+¿Dudas del amor que te tengo? 🥹<br>
+<button onclick="answer(7,'Sí')">Sí</button>
+<button onclick="answer(7,'No')">No</button>
+<button onclick="answer(7,'Lo siento en cada detalle')">Lo siento en cada detalle</button>
+</div>
+
+<div id="final">
+<h1>Ahora déjame decirte algo… 💖</h1>
+
+<p>
+Amor…<br><br>
+
+Si llegaste hasta aquí, quiero que sepas algo importante:  
+esto no es una prueba, ni una duda, ni un reclamo.  
+Es una pausa.  
+Un momento para mirarte con el corazón abierto  
+y decirte lo que a veces no sé cómo expresar en voz alta. 🤍<br><br>
+
+No te amo por costumbre,  
+te amo por decisión.  
+Porque cada día, aun con errores,  
+te sigo eligiendo.  
+Porque cuando pienso en tranquilidad, en hogar, en paz,  
+tu nombre aparece sin que yo lo busque. 🌿<br><br>
+
+A tu lado aprendí que el amor no siempre es perfecto,  
+pero sí puede ser honesto.  
+Que amar no es controlar,  
+sino cuidar.  
+Que no se trata de no fallar nunca,  
+sino de nunca dejar de intentarlo. 💭<br><br>
+
+Quiero que sepas que mi intención contigo es limpia.  
+Que no juego con lo que siento  
+ni con lo que tú sientes.  
+Mi deseo no es herirte,  
+es proteger lo que somos  
+y lo que podemos llegar a ser. 🤍<br><br>
+
+Cuando el mundo pesa,  
+yo quiero ser descanso.  
+Cuando dudes,  
+quiero ser certeza.  
+Y cuando ores,  
+quiero ser ese nombre que le pidas a Dios que cuide contigo. 🙏✨<br><br>
+
+No te prometo una vida sin problemas,  
+pero sí una vida donde nunca estés sola.  
+Donde el respeto, la lealtad  
+y la verdad sean la base.  
+Si algún día te preguntas cuánto te amo,  
+recuerda esto:  
+mi amor por ti no grita,  
+pero permanece. 💖<br><br>
+
+Gracias por ser parte de mi vida.  
+Gracias por quedarte.  
+Gracias por sentir.  
+Mi corazón no es perfecto,  
+pero es sincero…  
+y es tuyo. 🤍
+</p>
+
+<div id="answers"></div>
+</div>
+
+<script>
+let current = 1;
+let respuestas = {};
+
+document.getElementById("q1").style.display = "block";
+
+function answer(num, text) {
+    respuestas[num] = text;
+    document.getElementById("q" + current).style.display = "none";
+    current++;
+    if (current <= 7) {
+        document.getElementById("q" + current).style.display = "block";
+    } else {
+        showFinal();
+    }
+}
+
+function showFinal() {
+    document.getElementById("final").style.display = "block";
+
+    let resumen = "<h2>💌 Tus respuestas</h2>";
+    const preguntas = [
+        "¿Me amas?",
+        "¿Eres feliz a mi lado?",
+        "¿Te sientes segura a mi lado?",
+        "¿Soy el hombre que siempre has querido?",
+        "¿Serías capaz de hacerme daño?",
+        "¿Tendrías el valor para engañarme?",
+        "¿Dudas del amor que te tengo?"
+    ];
+
+    for (let i = 1; i <= 7; i++) {
+        resumen += `<p><strong>${preguntas[i-1]}</strong><br>${respuestas[i]}</p>`;
+    }
+
+    document.getElementById("answers").innerHTML = resumen;
+}
+</script>
+
+</body>
+</html>
