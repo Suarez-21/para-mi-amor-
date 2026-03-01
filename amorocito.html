@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Solo para ti 🤍</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#7ec8e3;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+    font-size:22px;
+    line-height:1.9;
+}
+
+/* Corazones de fondo */
+.fondo-corazones{
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    z-index:0;
+    pointer-events:none;
+}
+.fondo-corazones span{
+    position:absolute;
+    color:red;
+    font-size:22px;
+    opacity:0.4;
+}
+
+/* Contenido */
+.contenido{
+    position:relative;
+    z-index:2;
+}
+
+/* Pantallas */
+.pantalla{
+    display:none;
+    padding:40px;
+}
+.activa{
+    display:block;
+}
+
+/* Input */
+input{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    font-size:18px;
+    text-align:center;
+}
+
+/* Botón */
+button{
+    background:white;
+    color:#0b3c7d;
+    border:none;
+    padding:14px 30px;
+    border-radius:25px;
+    font-size:18px;
+    cursor:pointer;
+}
+button:hover{
+    background:#f2f2f2;
+}
+
+/* Corazón */
+.corazon{
+    font-size:90px;
+    animation:latir 1s infinite;
+    cursor:pointer;
+}
+@keyframes latir{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+/* Galería */
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:20px;
+}
+.galeria div{
+    background:rgba(255,255,255,0.25);
+    padding:15px;
+    border-radius:15px;
+}
+.galeria img{
+    width:100%;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Música -->
+<audio autoplay loop>
+  <source src="morfina.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Corazones fondo -->
+<div class="fondo-corazones">
+  <span style="top:10%;left:15%;">❤️</span>
+  <span style="top:25%;left:70%;">❤️</span>
+  <span style="top:45%;left:30%;">❤️</span>
+  <span style="top:65%;left:80%;">❤️</span>
+  <span style="top:80%;left:50%;">❤️</span>
+  <span style="top:15%;left:50%;">❤️</span>
+  <span style="top:55%;left:10%;">❤️</span>
+</div>
+
+<div class="contenido">
+
+<!-- Pantalla bloqueo -->
+<div id="p0" class="pantalla activa">
+    <h1>Solo para ti 🤍</h1>
+    <p>Ingresa nuestra fecha especial</p>
+    <input type="password" id="clave" placeholder="DD/MM/AA">
+    <br><br>
+    <button onclick="verificar()">Entrar</button>
+</div>
+
+<!-- Pantalla corazón -->
+<div id="p1" class="pantalla">
+    <h1>Esto es para ti 🤍</h1>
+    <div class="corazon" onclick="mostrar(2)">❤️</div>
+    <p>Tócame</p>
+</div>
+
+<!-- Galería -->
+<div id="p2" class="pantalla">
+    <div class="galeria">
+        <div><img src="foto1.jpeg"><p>Momentos que guardo en mi corazón</p></div>
+        <div><img src="foto2.jpeg"><p>Sonrisas que me sostienen</p></div>
+        <div><img src="foto3.jpeg"><p>Recuerdos que viven en mí</p></div>
+        <div><img src="foto4.jpeg"><p>Porque tú eres especial</p></div>
+    </div>
+    <br>
+    <button onclick="mostrar(3)">Siguiente</button>
+</div>
+
+<!-- TEXTO LARGO -->
+<div id="p3" class="pantalla">
+<div style="max-width:900px;margin:auto;font-size:26px;text-align:left;">
+
+<p>Amor…</p>
+
+<p>
+Si estás leyendo esto, quiero que sepas algo desde el inicio:  
+esto no nace de la obligación, ni del miedo, ni de la presión.  
+Nace del amor más sincero que sé sentir.
+</p>
+
+<p>
+Quería encontrar una forma de hablarte sin interrumpirte,  
+sin apresurarte, sin exigirte respuestas.  
+Una forma donde pudieras leerme despacio,  
+respirar, detenerte, sentir.
+</p>
+
+<p>
+Eres una persona profundamente especial para mí.  
+No por lo que haces, no por lo que das,  
+sino por lo que eres.
+</p>
+
+<p>
+Por tu sensibilidad, por tu manera de sentir la vida,  
+por tu forma tan humana de amar, incluso cuando duele.  
+Por tus silencios, por tus preguntas,  
+por tu corazón que a veces se cansa, pero nunca deja de sentir.
+</p>
+
+<p>
+No voy a decir que todo ha sido perfecto,  
+porque el amor real no lo es.  
+Hemos tenido momentos de alegría,  
+pero también momentos de duda, de miedo, de cansancio.
+</p>
+
+<p>
+Y aun así… aquí estoy.
+</p>
+
+<p>
+Aquí estoy porque incluso en los días difíciles,  
+yo sigo eligiéndote.  
+No porque sea fácil, sino porque para mí vale la pena.
+</p>
+
+<p>
+Te elijo cuando sonríes.  
+Te elijo cuando lloras.  
+Te elijo cuando estás segura,  
+y también cuando no sabes qué sentir.
+</p>
+
+<p>
+Quiero que sepas que no tienes que ser fuerte todo el tiempo.  
+No tienes que tener todas las respuestas.  
+No tienes que cargar sola con lo que pesa.
+</p>
+
+<p>
+Si decides caminar, camino contigo.  
+Si necesitas tiempo, te lo respeto.  
+Si un día dudas, aquí sigo, sin reproches, sin condiciones.
+</p>
+
+<p>
+Le pido a Dios muchas cosas,  
+pero sobre todo le pido que te cuide,  
+que te dé paz,  
+y que, pase lo que pase, nunca dudes de lo valiosa que eres.
+</p>
+
+<p>
+No escribo esto para atarte,  
+lo escribo para amarte bien.
+</p>
+
+<p>
+Para que sepas que, incluso en los momentos grises,  
+mi amor no desaparece.  
+Se queda.  
+Espera.  
+Cuida.
+</p>
+
+<p>
+Gracias por existir.  
+Gracias por sentir.  
+Gracias por haber tocado mi vida de una forma tan profunda.
+</p>
+
+<p>
+Con todo mi corazón,  
+siempre 🤍
+</p>
+
+</div>
+</div>
+
+</div>
+
+<script>
+function mostrar(n){
+  document.querySelectorAll('.pantalla').forEach(p=>p.classList.remove('activa'));
+  document.getElementById('p'+n).classList.add('activa');
+}
+
+function verificar(){
+  const clave = document.getElementById('clave').value;
+  if(clave === "24/04/24"){
+      mostrar(1);
+  }else{
+      alert("Clave incorrecta 🤍");
+  }
+}
+</script>
+
+</body>
+</html>
